@@ -1,0 +1,2 @@
+SPLIT_KEYBOARD = yes
+# AUTO_SHIFT_ENABLE = yes
