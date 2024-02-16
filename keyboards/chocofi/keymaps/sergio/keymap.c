@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 enum Layer {
-    /* QWERTY = 0, */
-    DVORAK = 0,
+    // QWERTY = 0,
+    MAIN = 0,
     SYM,
     NUM,
     NAV,
@@ -54,18 +54,19 @@ enum Layer {
 #define MY_MODN(key) LT(LGUI(key))
 #define MY_MODNS(key) LT(LGUI(LSFT(key)))
 
-#define MAIN DVORAK
-/* #define MAIN QWERTY */
+// #define MAIN DVORAK
+// #define MAIN QWERTY
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* [QWERTY] = LAYOUT_split_3x5_3( */
-    /*     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, */
-    /*     MY_LCTL(KC_A),   KC_S_,   KC_D_,   KC_F_,   KC_G_,                              KC_H,    KC_J,    KC_K,    KC_L,    MY_LCTL(KC_SCLN), */
-    /*     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, */
-    /*              MY_LCTL(KC_TAB), MY_SHIFT(KC_SPC), TG(SYM),                     MY_LCTL(KC_ENT), MY_SHIFT(KC_BSPC), TG(NUM) */
-    /*              /1* KC_WM, MY_SHIFT(KC_SPC),    MY_LCTL(KC_TAB),                    MY_LCTL(KC_ENT), MY_SHIFT(KC_BSPC), MO(SYM) *1/ */
-    /* ), */
-    [DVORAK] = LAYOUT_split_3x5_3(
+    // QWERTY
+    // [MAIN] = LAYOUT_split_3x5_3(
+    //         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    // LCTL_T(KC_A),   LCTL_T(KC_S),   KC_D_,   MY_MOD(KC_F),   KC_G_,                 KC_H,    MY_MOD(KC_J),    KC_K,    KC_L,    MY_LCTL(KC_SCLN),
+    //         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
+    //         MY_MOD(KC_TAB), MY_SHIFT(KC_SPC), LT(SYM,KC_ESC),                     LT(NUM,KC_ENT), MY_SHIFT(KC_BSPC), TG(GAME_0)
+    // ),
+    // DVORAK
+    [MAIN] = LAYOUT_split_3x5_3(
         KC_QUOT,          KC_COMM,   KC_DOT , KC_P           , KC_Y   ,                    KC_F   , KC_G          , KC_C   , KC_R   , KC_L   ,
         MY_LCTL(KC_A),MY_LCTL(KC_O), KC_E,   MY_MOD(KC_U)    , KC_I   ,                    KC_D  , MY_MOD(KC_H)  , KC_T   , KC_N   , MY_LCTL(KC_S)   ,
         KC_SCLN,      KC_Q,          KC_J   , KC_K           , KC_X   ,                    KC_B, KC_M    , KC_W   , KC_V   , KC_Z   ,
